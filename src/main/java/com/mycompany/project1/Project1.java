@@ -37,16 +37,28 @@ public class Project1 extends JComponent {
         graphic2D.fill(firstRectangle2D);
 
         /* Line2D notes:
-        x1, y1 = starting point, while the point starts in top left corner.
-        x2, y2 = ending point.
-        while x is vertical and y is horizontal.
+        Points start in the top left corner.
+        x = vertical, such that: x1 = start point, x2 = end point.
+        y = horizontal, such that: y1 = start point, y2 = end point.
          */
-        Line2D.Double line2D = new Line2D.Double(0, 0, 600, 300);
+        Line2D.Double firstLine2D = new Line2D.Double(50, 50, 300, 50);
         graphic2D.setColor(Color.BLACK);
-        graphic2D.draw(line2D);
+        graphic2D.draw(firstLine2D);
+
+        Line2D.Double secondLine2D = new Line2D.Double(300, 50, 300, 275);
+        graphic2D.setColor(Color.RED);
+        graphic2D.draw(secondLine2D);
+
+        Line2D.Double thirdLine2D = new Line2D.Double(50, 275, 300, 275);
+        graphic2D.setColor(Color.GREEN);
+        graphic2D.draw(thirdLine2D);
+
+        Line2D.Double fourthLine2D = new Line2D.Double(50, 50, 50, 275);
+        graphic2D.setColor(Color.PINK);
+        graphic2D.draw(fourthLine2D);
 
         // Another Rectangle2D example.
-        Rectangle2D secondRectangle2D = new Rectangle2D.Double(85, 85, 150, 75);
+        Rectangle2D secondRectangle2D = new Rectangle2D.Double(85, 85, 300, 150);
         graphic2D.setColor(Color.YELLOW);
         graphic2D.fill(secondRectangle2D);
 
@@ -54,8 +66,7 @@ public class Project1 extends JComponent {
         - Methods between shapes and lines may differ.
         Example: we use "fill" method for shapes such as Rectangle2D. Unlike lines such as Line2D, we use "draw" method.
 
-        - Bottom Object appears on top of everything.
-        Example: secondRectangle2D is below line2D and firstRectangle2D.
+        - Last created object appears on top of every object (Stack style).
          */
     }
 }
