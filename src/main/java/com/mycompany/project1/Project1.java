@@ -1,9 +1,7 @@
 package com.mycompany.project1;
 
 import javax.swing.JComponent;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Color;
+import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import java.awt.geom.Line2D;
@@ -25,6 +23,9 @@ public class Project1 extends JComponent {
 
     public void paintComponent(Graphics graphic){
         Graphics2D graphic2D = (Graphics2D) graphic;
+
+        RenderingHints render = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        graphic2D.setRenderingHints(render);
 
         /*
         Rectangle2D notes:
@@ -57,8 +58,12 @@ public class Project1 extends JComponent {
         graphic2D.setColor(Color.PINK);
         graphic2D.draw(fourthLine2D);
 
+        Line2D.Double fifthLine2D = new Line2D.Double(50, 50, 600, 300);
+        graphic2D.setColor(Color.BLACK);
+        graphic2D.draw(fifthLine2D);
+
         // Another Rectangle2D example.
-        Rectangle2D secondRectangle2D = new Rectangle2D.Double(85, 85, 300, 150);
+        Rectangle2D secondRectangle2D = new Rectangle2D.Double(90, 90, 150, 75);
         graphic2D.setColor(Color.YELLOW);
         graphic2D.fill(secondRectangle2D);
 
